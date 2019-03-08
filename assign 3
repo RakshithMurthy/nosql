@@ -1,0 +1,31 @@
+Welcome to JDoodle - online mongo Terminal, Starting mongo Terminal, Please wait...
+New mongoDB session started...
+>use emp
+switched to db emp
+>db.createCollection('emp');
+{ "ok" : 1 }
+>db.emp.insert({first_name:"shaik",last_name:"bangkok"});
+WriteResult({ "nInserted" : 1 })
+>db.emp.insert([{first_name:"abhi",last name:"physco"},{first name:"raks",last name:"tinku",Gender:"male"}]);
+2019-03-08T04:51:18.733+0000 E QUERY    [thread1] SyntaxError: missing : after property id @(shell):1:39
+>db.emp.insert([{first_name:"abhi",last name:"physco"}, {first name:"raks",last name:"tinku",Gender:"male"}]);
+2019-03-08T04:52:38.428+0000 E QUERY    [thread1] SyntaxError: missing : after property id @(shell):1:39
+>db.emp.insert({first_name:"abhi",last name:"physco"}, {first name:"raks",last name:"tinku",Gender:"male"});
+2019-03-08T04:53:15.590+0000 E QUERY    [thread1] SyntaxError: missing : after property id @(shell):1:38
+>db.emp.insert({first_name:"abhi",last name:"physco"},{first name:"raks",last name:"tinku",Gender:"male"});
+2019-03-08T04:53:56.192+0000 E QUERY    [thread1] SyntaxError: missing : after property id @(shell):1:38
+>db.emp.insert({first_name:"abhi",last_name:"physco"},{first_name:"raks",last_name:"tinku",Gender:"male"});
+WriteResult({ "nInserted" : 1 })
+>db.customers.update({first_name:"abhi"}, {first_name:"abhi", last_name:"physco", gender:"Male"});
+WriteResult({ "nMatched" : 0, "nUpserted" : 0, "nModified" : 0 })
+>db.emp.find().pretty();
+{
+    "_id" : ObjectId("5c81f2f3d60eeb4b318bd126"),
+    "first_name" : "shaik",
+    "last_name" : "bangkok"
+}
+{
+    "_id" : ObjectId("5c81f5a52576dd7810cde3c6"),
+    "first_name" : "abhi",
+    "last_name" : "physco"
+}
